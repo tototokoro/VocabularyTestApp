@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,77 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VocabularyTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-rJ-og2">
+                                <rect key="frame" x="143" y="84" width="89" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <action selector="dropBoxSinginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abI-aT-iDD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkA-4r-SnN">
+                                <rect key="frame" x="102.5" y="162" width="170" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Download File"/>
+                                <connections>
+                                    <action selector="downloadFileButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gjc-F2-SAV"/>
+                                    <segue destination="ZuY-rY-dGR" kind="show" identifier="toTestView" id="ONR-rI-1jJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mkA-4r-SnN" firstAttribute="centerX" secondItem="dUc-rJ-og2" secondAttribute="centerX" id="1go-Xi-LIy"/>
+                            <constraint firstItem="dUc-rJ-og2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="FpG-Ya-toO"/>
+                            <constraint firstItem="mkA-4r-SnN" firstAttribute="centerX" secondItem="dUc-rJ-og2" secondAttribute="centerX" id="IBp-kE-o7c"/>
+                            <constraint firstItem="dUc-rJ-og2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UlE-6k-FYs"/>
+                            <constraint firstItem="mkA-4r-SnN" firstAttribute="top" secondItem="dUc-rJ-og2" secondAttribute="bottom" constant="32" id="eiG-wx-Quo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="129" y="23"/>
+        </scene>
+        <!--Vocabulary Test Controller-->
+        <scene sceneID="9E3-Qh-PhP">
+            <objects>
+                <viewController id="ZuY-rY-dGR" customClass="VocabularyTestController" customModule="VocabularyTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CYQ-rj-Wkw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-rW-3eI">
+                                <rect key="frame" x="112.5" y="208.5" width="150" height="70"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchSideButton:" destination="ZuY-rY-dGR" eventType="touchUpInside" id="ubA-xv-ywn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fdp-rW-3eI" firstAttribute="centerY" secondItem="CYQ-rj-Wkw" secondAttribute="centerY" constant="-90" id="L3u-ol-82c"/>
+                            <constraint firstItem="fdp-rW-3eI" firstAttribute="centerX" secondItem="CYQ-rj-Wkw" secondAttribute="centerX" id="yer-SP-Feb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UaQ-Tc-a7A"/>
+                    </view>
+                    <connections>
+                        <outlet property="wordButton" destination="fdp-rW-3eI" id="EMu-sJ-J8v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxa-1V-UoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="23"/>
         </scene>
     </scenes>
 </document>
